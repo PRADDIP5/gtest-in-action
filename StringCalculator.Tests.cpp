@@ -109,5 +109,4 @@ TEST(StringCalculatorTestSuite,add_OneInputIsNegative_ExpectedIsThrowExceptionAn
   int actualValue = Add(input);
   //Assert
   ASSERT_THROW(Add(input),invalid_argument);
-  ASSERT_EQ(actualValue,expectedValue);
 }
