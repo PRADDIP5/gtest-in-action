@@ -71,9 +71,9 @@ TEST(StringCalculatorTestSuite,add_ThreeInputsWithCommaAndNewLineDelimeters_Expe
   ASSERT_EQ(actualValue,expectedValue);
 }
 
-TEST(StringCalculatorTestSuite,add_TwoInputsWithCommaAndNewLineDelimeters_ExpectedIsSumofThreeNumbers) {
+TEST(StringCalculatorTestSuite,add_TwoInputsWithMultipleDelimeters_ExpectedIsSumofNumbers) {
   // Arrrange
-  string input = "//;\n1;2";
+  string input = "//,\n1;2";
   int expectedValue = 3;
   //Act
   int actualValue = Add(input);
