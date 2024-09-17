@@ -5,7 +5,7 @@ class StringCaluculatorFixture:public testing::Test {  // Test Fixture
 protected:
   string input;
   int expectedValue,actualValue;
-}
+};
 
 TEST_F(StringCaluculatorFixture,add_InputStringIsEmpty_ExpectedOutputIsZero) { 
   // Arrrange
