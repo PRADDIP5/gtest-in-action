@@ -101,7 +101,7 @@ TEST(StringCalculatorTestSuite,add_OneInputIsGreaterThan1000_ExpectedIsSumofRema
   ASSERT_EQ(actualValue,expectedValue);
 }
 
-TEST(StringCalculatorTestSuite,add_OneInputIsNegative_ExpectedIsSumofRemainingNumbers) {
+TEST(StringCalculatorTestSuite,add_OneInputIsNegative_ExpectedIsThrowExceptionAndSumofRemainingNumbers) {
   // Arrrange
   string input = "1,-3,2,3";
   int expectedValue = 6;
