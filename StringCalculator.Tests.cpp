@@ -60,3 +60,23 @@ TEST(StringCalculatorTestSuite,add_FourInputsWIthCommaDelimeter_ExpectedIsSumofF
   //Assert
   ASSERT_EQ(actualValue,expectedValue);
 }
+
+TEST(StringCalculatorTestSuite,add_ThreeInputsWithCommaAndNewLineDelimeters_ExpectedIsSumofThreeNumbers) {
+  // Arrrange
+  string input = "2\n3,5";
+  int expectedValue = 10;
+  //Act
+  int actualValue = Add(input);
+  //Assert
+  ASSERT_EQ(actualValue,expectedValue);
+}
+
+TEST(StringCalculatorTestSuite,add_TwoInputsWithCommaAndNewLineDelimeters_ExpectedIsSumofThreeNumbers) {
+  // Arrrange
+  string input = "//;\n1;2";
+  int expectedValue = 3;
+  //Act
+  int actualValue = Add(input);
+  //Assert
+  ASSERT_EQ(actualValue,expectedValue);
+}
