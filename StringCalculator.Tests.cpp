@@ -108,5 +108,6 @@ TEST(StringCalculatorTestSuite,add_OneInputIsNegative_ExpectedIsSumofRemainingNu
   //Act
   int actualValue = Add(input);
   //Assert
+  ASSERT_THROW(Add,invalid_argument);
   ASSERT_EQ(actualValue,expectedValue);
 }
