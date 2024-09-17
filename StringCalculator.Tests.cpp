@@ -106,3 +106,13 @@ TEST(StringCalculatorTestSuite,add_ThreeInputsWithMultipleDelimeters_ExpectedIsS
   //Assert
   ASSERT_EQ(actualValue,expectedValue);
 }
+
+TEST(StringCalculatorTestSuite,add_InputIsNegativeValue_ExpectedExceptionThrow) {
+  // Arrrange
+  string input = "1,-2,3,4";
+  int expectedValue = 8;
+  //Act
+  int actualValue = Add(input);
+  //Assert
+  ASSERT_THROW(Add(input),invalid_argument);
+}
