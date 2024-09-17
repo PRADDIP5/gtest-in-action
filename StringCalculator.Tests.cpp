@@ -100,3 +100,13 @@ TEST(StringCalculatorTestSuite,add_OneInputIsGreaterThan1000_ExpectedIsSumofRema
   //Assert
   ASSERT_EQ(actualValue,expectedValue);
 }
+
+TEST(StringCalculatorTestSuite,add_OneInputIsNegative_ExpectedIsThrowException) {
+  // Arrrange
+  string input = "1,-1,2";
+  int expectedValue = 3;
+  //Act
+  int actualValue = Add(input);
+  //Assert
+  ASSERT_ANYTHROW(Add(input),invalid_argument);
+}
