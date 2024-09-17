@@ -7,7 +7,7 @@ protected:
   int expectedValue,actualValue;
 };
 
-TEST_F(StringCaluculatorFixture,add_InputStringIsEmpty_ExpectedOutputIsZero) { 
+TEST_F(StringCaluculatorFixture,add_InputStringIsEmpty_ExpectedOutputIsZero) { // Test suite name should be name of Test Fixture
   // Arrrange
   input = "";
   expectedValue = 0;
