@@ -6,7 +6,7 @@ TEST(StringCalculatorTestSuite,add_emptyINutString_ZeroIsExpected) { // Testsuit
   string input = "";
   int expectedValue = 0;
   //Act
-  int actualValue = Add(inout);
+  int actualValue = Add(input);
   //Assert
   ASSERT_EQ(actualValue,expectedValue);
 }
