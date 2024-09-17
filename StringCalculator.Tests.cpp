@@ -31,10 +31,20 @@ TEST(StringCalculatorTestSuite,add_InputStringIsOne_ExpectedOutputIsOne) {
   ASSERT_EQ(actualValue,expectedValue);
 }
 
-TEST(StringCalculatorTestSuite,add_InputTwoNumbersOneDelimeter_ExpectedIsSumofTwoNumbers) {
+TEST(StringCalculatorTestSuite,add_InputsWithOneDelimeter_ExpectedIsSumofTwoNumbers) {
   // Arrrange
-  string input = "1,2";
-  int expectedValue = 3;
+  string input = "2,3";
+  int expectedValue = 5;
+  //Act
+  int actualValue = Add(input);
+  //Assert
+  ASSERT_EQ(actualValue,expectedValue);
+}
+
+TEST(StringCalculatorTestSuite,add_InputsTwoDelimeters_ExpectedIsSumofThreeNumbers) {
+  // Arrrange
+  string input = "1,5,6";
+  int expectedValue = 12;
   //Act
   int actualValue = Add(input);
   //Assert
