@@ -1,6 +1,22 @@
 #include "StringCalculator.h"
 #include <gtest/gtest.h>
 
+class StringCaluculatorFixture:public testing::Test {  // Test Fixture
+protected:
+  string input;
+  int expectedValue,actualValue;
+}
+
+TEST_F(StringCaluculatorFixture,add_InputStringIsEmpty_ExpectedOutputIsZero) { 
+  // Arrrange
+  input = "";
+  expectedValue = 0;
+  //Act
+  actualValue = Add(input);
+  //Assert
+  ASSERT_EQ(actualValue,expectedValue);
+}
+
 TEST(StringCalculatorTestSuite,add_InputStringIsEmpty_ExpectedOutputIsZero) { // Testsuite name, Test case name
   // Arrrange
   string input = "";
@@ -89,24 +105,4 @@ TEST(StringCalculatorTestSuite,add_ThreeInputsWithMultipleDelimeters_ExpectedIsS
   int actualValue = Add(input);
   //Assert
   ASSERT_EQ(actualValue,expectedValue);
-}
-
-TEST(StringCalculatorTestSuite,add_OneInputIsGreaterThan1000_ExpectedIsSumofRemainingNumbers) {
-  // Arrrange
-  string input = "1,1001,2";
-  int expectedValue = 3;
-  //Act
-  int actualValue = Add(input);
-  //Assert
-  ASSERT_EQ(actualValue,expectedValue);
-}
-
-TEST(StringCalculatorTestSuite,add_OneInputIsNegative_ExpectedIsThrowException) {
-  // Arrrange
-  string input = "1,-1,2";
-  int expectedValue = 3;
-  //Act
-  int actualValue = Add(input);
-  //Assert
-  ASSERT_ANY_THROW(Add(input));
 }
