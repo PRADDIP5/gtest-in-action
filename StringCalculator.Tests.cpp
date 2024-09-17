@@ -31,7 +31,7 @@ TEST(StringCalculatorTestSuite,add_InputStringIsOne_ExpectedOutputIsOne) {
   ASSERT_EQ(actualValue,expectedValue);
 }
 
-TEST(StringCalculatorTestSuite,add_InputsWithOneDelimeter_ExpectedIsSumofTwoNumbers) {
+TEST(StringCalculatorTestSuite,add_TwoInputsWithCommaDelimeter_ExpectedIsSumofTwoNumbers) {
   // Arrrange
   string input = "2,3";
   int expectedValue = 5;
@@ -41,10 +41,20 @@ TEST(StringCalculatorTestSuite,add_InputsWithOneDelimeter_ExpectedIsSumofTwoNumb
   ASSERT_EQ(actualValue,expectedValue);
 }
 
-TEST(StringCalculatorTestSuite,add_InputsTwoDelimeters_ExpectedIsSumofThreeNumbers) {
+TEST(StringCalculatorTestSuite,add_ThreeInputsWithCommaDelimeter_ExpectedIsSumofThreeNumbers) {
   // Arrrange
   string input = "1,5,6";
   int expectedValue = 12;
+  //Act
+  int actualValue = Add(input);
+  //Assert
+  ASSERT_EQ(actualValue,expectedValue);
+}
+
+TEST(StringCalculatorTestSuite,add_FourInputsWIthCommaDelimeter_ExpectedIsSumofFourNumbers) {
+  // Arrrange
+  string input = "1,5,6,12";
+  int expectedValue = 24;
   //Act
   int actualValue = Add(input);
   //Assert
