@@ -7,8 +7,6 @@ protected:
     string input;
     int expectedValue;
     int actualValue;
-    input = get<0>(GetParam());
-    expectedValue = get<1>(GetParam());
 };
 class StringCalculatorParameterFixture:public StringCalculatorFixture, public testing::WithParamInterface<tuple<string,int>>{
 
@@ -20,6 +18,8 @@ INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFi
   make_tuple("1", 1),
   make_tuple("1,2", 3),
   make_tuple("1,2,3", 6)
+input = get<0>(GetParam());
+    expectedValue = get<1>(GetParam());
   
 ));
 
