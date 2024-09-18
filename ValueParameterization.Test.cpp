@@ -44,3 +44,11 @@ TEST_P(StringCalculatorParameterFixture,ParameterizedTest){
      // actualValue = Add(input);
      // ASSERT_EQ(actualValue,expectedValue);
 }
+
+TEST(InteractTestSuite,InteractionTest){
+     string input="";
+     int expectedValue=0;
+     Add(input,&fakeDisplayFunction);
+     ASSERT_EQ(DisplayFunctionCallCount,1);
+    ASSERT_EQ(DisplayFunctionArg,0);
+}
