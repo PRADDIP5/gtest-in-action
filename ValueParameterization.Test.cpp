@@ -11,8 +11,11 @@ protected:
 
 class StringCalculatorParameterFixture:public StringCalculatorFixture, public testing::WithParamInterface<tuple<string,int>>{
 protected:
+void SetUp() override {
+ // Set up parameters for the test based on the current test case
   input = get<0>(GetParam());
   expectedValue = get<1>(GetParam());
+    }
 };
 
 //Parameter Values
