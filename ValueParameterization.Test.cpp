@@ -8,9 +8,13 @@ protected:
     int expectedValue;
     int actualValue;
 };
-class StringCalculatorParameterFixture:public StringCalculatorFixture, public testing::WithParamInterface<tuple<string,int>>{
 
+class StringCalculatorParameterFixture:public StringCalculatorFixture, public testing::WithParamInterface<tuple<string,int>>{
+protected:
+  input = get<0>(GetParam());
+  expectedValue = get<1>(GetParam());
 };
+
 //Parameter Values
 INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFixture,testing::Values(
   make_tuple("", 0),
@@ -18,10 +22,7 @@ INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFi
   make_tuple("1", 1),
   make_tuple("1,2", 3),
   make_tuple("1,2,3", 6)
-)
-);
-input = get<0>(GetParam());
-expectedValue = get<1>(GetParam());
+));
 
 TEST_P(StringCalculatorParameterFixture,ParameterizedTest){
       actualValue = Add(input);
