@@ -19,9 +19,9 @@ INSTANTIATE_TEST_SUITE_P(ValidStringCalculatorInputs,StringCalculatorParameterFi
   make_tuple("1,2", 3),
   make_tuple("1,2,3", 6)
 )
-    input = get<0>(GetParam());
-    expectedValue = get<1>(GetParam());
 );
+input = get<0>(GetParam());
+expectedValue = get<1>(GetParam());
 
 TEST_P(StringCalculatorParameterFixture,ParameterizedTest){
       actualValue = Add(input);
